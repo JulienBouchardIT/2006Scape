@@ -21,11 +21,8 @@ jobs:
       run: |
         cd "2006Scape Client"
         mvn -B clean install
-        ls
-        pwd
-        ls target
     - name: Save build
       uses: actions/upload-artifact@v2
       with:
         name: result
-        path: /home/runner/work/2006Scape/2006Scape/2006Scape Client/target/*
+        path: /home/runner/work/2006Scape/2006Scape/2006Scape Client/target/client-1.0-jar-with-dependencies.jar

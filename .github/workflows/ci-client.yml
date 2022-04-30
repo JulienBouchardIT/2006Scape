@@ -22,3 +22,8 @@ jobs:
         cd "2006Scape Client"
         mvn -B clean install
         ls
+    - name: Save build
+      uses: actions/upload-artifact@v2
+      with:
+        name: result
+        path: target/*

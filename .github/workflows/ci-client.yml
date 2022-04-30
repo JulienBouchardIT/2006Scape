@@ -4,7 +4,10 @@
 name: CI Client
 
 on:
-  workflow_dispatch 
+  workflow_dispatch:
+    inputs:
+      server_ip:
+        required: true
 
 jobs:
   build:
@@ -22,7 +25,7 @@ jobs:
         cd "2006Scape Client"
         mvn -B clean install
         mkdir arte
-        echo "client-1.0-jar-with-dependencies.jar -ip 192.168.2.100" >> arte/2006rs.bat
+        echo "client-1.0-jar-with-dependencies.jar -ip ${{ github.event.inputs.server_ip }}" >> arte/2006rs.bat
         mv target/client-1.0-jar-with-dependencies.jar arte/client-1.0-jar-with-dependencies.jar
     - name: Save build
       uses: actions/upload-artifact@v2

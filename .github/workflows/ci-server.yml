@@ -1,4 +1,4 @@
-name: CI server
+name: CI Server
 on: workflow_dispatch
 jobs:
   test:

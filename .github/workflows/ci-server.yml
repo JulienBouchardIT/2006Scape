@@ -10,4 +10,4 @@ jobs:
       - name: Login to registry
         run: docker login ghcr.io -u ${{ registry-username }} -p ${{ registry.token }}
       - name: Push
-        run: docker push ghcr.io/2006Space/app:1.0.0
+        run: docker push ghcr.io/JulienBouchardIT/2006Scape:1.0.0

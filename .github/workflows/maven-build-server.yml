@@ -22,3 +22,8 @@ jobs:
         cd "2006Scape Server"
         mvn -B clean install
         ls target
+    - name: Upload Artifact GitHub Action
+      uses: actions/upload-artifact@v2
+      with: 
+        name: server.jar
+        path: target/server-1.0-jar-with-dependencies.jar

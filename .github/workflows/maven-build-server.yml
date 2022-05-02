@@ -26,4 +26,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: server.jar
-        path: target/server-1.0-jar-with-dependencies.jar
+        path: /home/runner/work/2006Scape/2006Scape/2006Scape Server/target/server-1.0-jar-with-dependencies.jar

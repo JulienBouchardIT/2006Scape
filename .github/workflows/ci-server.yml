@@ -11,5 +11,5 @@ jobs:
         run: docker login ghcr.io -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_TOKEN }}
       - name: Push
         run: |
-          docker image
+          docker images
           docker push ghcr.io/julienbouchardit/2006scape:1.0.0

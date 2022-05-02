@@ -8,6 +8,6 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Login to registry
-        run: docker login ghcr.io -u ${{ REGISTRY_USERNAME }} -p ${{ REGISTRY_TOKEN }}
+        run: docker login ghcr.io -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_TOKEN }}
       - name: Push
         run: docker push ghcr.io/JulienBouchardIT/2006Scape:1.0.0

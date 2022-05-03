@@ -19,8 +19,8 @@ jobs:
     - name: Move to tmp
       run: |
         mkdir /tmp/2006scape
-        mv /home/runner/work/2006Scape/2006Scape/2006Scape Server/target/server-1.0-jar-with-dependencies.jar /tmp/2006scape/server.jar
-        mv /home/runner/work/2006Scape/2006Scape/2006Scape Server/Dockerfile /tmp/2006scape/Dockerfile
+        mv "/home/runner/work/2006Scape/2006Scape/2006Scape Server/target/server-1.0-jar-with-dependencies.jar" "/tmp/2006scape/server.jar"
+        mv "/home/runner/work/2006Scape/2006Scape/2006Scape Server/Dockerfile" "/tmp/2006scape/Dockerfile"
     - name: Build image
       run: |
         cd /tmp/2006scape

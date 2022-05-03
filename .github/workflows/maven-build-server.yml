@@ -26,3 +26,9 @@ jobs:
       with: 
         name: server
         path: /home/runner/work/2006Scape/2006Scape/2006Scape Server/target/server-1.0-jar-with-dependencies.jar
+    - name: Publish release
+      uses: StuYarrow/publish-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        id: 0.0.1

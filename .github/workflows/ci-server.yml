@@ -16,19 +16,15 @@ jobs:
       run: |
         cd "2006Scape Server"
         mvn -B clean install
-        
     - name: Move to tmp
       run: |
         mkdir /tmp/2006scape
         mv /home/runner/work/2006Scape/2006Scape/2006Scape Server/target/server-1.0-jar-with-dependencies.jar /tmp/2006scape/server.jar
-        
-  docker:
-    runs-on: ubuntu-latest
-    
-    steps:
+        mv /home/runner/work/2006Scape/2006Scape/2006Scape Server/Dockerfile /tmp/2006scape/Dockerfile
     - name: Build image
       run: |
         cd /tmp/2006scape
+        docker build -t 2006scape:1.0.0 .
     - name: Login to registry
       run: docker login ghcr.io -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_TOKEN }}
     - name: Push
